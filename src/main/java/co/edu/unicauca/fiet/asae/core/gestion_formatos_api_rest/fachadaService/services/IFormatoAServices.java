@@ -13,5 +13,5 @@ public interface IFormatoAServices {
     FormatoDTORespuesta consultarFormato(String id);
     List<FormatoDTORespuesta> listarFormatos();
     FormatoDTORespuesta modificarFormato(String id, FormatoDTOPeticion formato);
-    FormatoDTORespuesta cambiarEstado(String id, EstadoEnum estado);
+    String cambiarEstado(String id, EstadoEnum estado);
 }

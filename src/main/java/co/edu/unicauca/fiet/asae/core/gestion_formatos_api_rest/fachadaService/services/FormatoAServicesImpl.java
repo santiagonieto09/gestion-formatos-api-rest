@@ -68,7 +68,7 @@ public class FormatoAServicesImpl implements IFormatoAServices{
     }
 
     @Override
-    public FormatoDTORespuesta cambiarEstado(String id, EstadoEnum estado) {
-        return null;
+    public String cambiarEstado(String id, EstadoEnum estado) {
+        return estado.toString();
     }
 }

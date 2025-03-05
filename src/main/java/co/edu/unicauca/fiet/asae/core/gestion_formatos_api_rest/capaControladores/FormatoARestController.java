@@ -41,8 +41,8 @@ public class FormatoARestController {
         return ResponseEntity.ok(formatoAServices.modificarFormato(id, formato));
     }
 
-    @PatchMapping("/{id}/estado")
-    public ResponseEntity<FormatoDTORespuesta> cambiarEstado(@PathVariable String id, @RequestBody EstadoEnum estado) {
+    @PatchMapping("/{id}/{estado}")
+    public ResponseEntity<String> cambiarEstado(@PathVariable String id, @PathVariable EstadoEnum estado) {
         return ResponseEntity.ok(formatoAServices.cambiarEstado(id, estado));
     }
 }
