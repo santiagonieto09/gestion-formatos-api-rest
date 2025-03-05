@@ -15,7 +15,6 @@ API REST para la gestión de propuestas de trabajos de grado (modalidades PP-A y
 - **Framework**: Spring Boot 3.x
 - **Gestión de dependencias**: Maven
 
-...
 ## Autores  
 - **Jerferson Castaño** - <jcastanoossa@unicauca.edu.co>  
 - **Santiago Nieto** - <santiagonietu@unicauca.edu.co>  
