@@ -86,6 +86,11 @@ public class FormatoARepositoryImpl implements IFormatoARepository{
 
     @Override
     public Optional<FormatoEntity> modificarFormato(String id, FormatoEntity formato) {
+        FormatoEntity formatoActual = mapaFormatos.get(id);
+        formato.setTipo(formatoActual.getTipo());
+        formato.setId(formatoActual.getId());
+        formato.setFechaCreacion(formatoActual.getFechaCreacion());
+        formato.setEstado(formatoActual.getEstado());
         mapaFormatos.put(id, formato);
         return Optional.of(formato);
     }

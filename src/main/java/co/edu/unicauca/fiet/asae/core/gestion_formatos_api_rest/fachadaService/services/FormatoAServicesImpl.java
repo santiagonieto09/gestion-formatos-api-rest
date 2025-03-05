@@ -63,7 +63,8 @@ public class FormatoAServicesImpl implements IFormatoAServices{
 
     @Override
     public FormatoDTORespuesta modificarFormato(String id, FormatoDTOPeticion formato) {
-        return null;
+        FormatoEntity newFormato = servicioAccesoBD.modificarFormato(id, FormatoMapper.INSTANCE.toEntity(formato)).orElseThrow(() -> new FormatoException("Formato no encontrado."));
+        return FormatoMapper.INSTANCE.toDTO(newFormato);
     }
 
     @Override
