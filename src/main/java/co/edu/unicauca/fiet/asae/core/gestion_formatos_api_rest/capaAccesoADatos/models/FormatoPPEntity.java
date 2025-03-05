@@ -6,10 +6,17 @@ package co.edu.unicauca.fiet.asae.core.gestion_formatos_api_rest.capaAccesoADato
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 @Getter
 @Setter
+@ToString
 public class FormatoPPEntity extends FormatoEntity{
     String asesor;
     String carta;
+
+    public FormatoPPEntity() {
+        super();
+        super.setTipo("PP");
+    }
 }

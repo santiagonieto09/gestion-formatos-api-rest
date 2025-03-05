@@ -6,11 +6,18 @@ package co.edu.unicauca.fiet.asae.core.gestion_formatos_api_rest.capaAccesoADato
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 import java.util.List;
 
 @Setter
 @Getter
+@ToString
 public class FormatoTIEntity extends FormatoEntity{
     List<String> estudiantes;
+
+    public FormatoTIEntity() {
+        super();
+        super.setTipo("PP");
+    }
 }

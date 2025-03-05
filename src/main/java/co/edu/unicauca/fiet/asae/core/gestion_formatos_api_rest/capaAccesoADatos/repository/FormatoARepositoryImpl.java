@@ -26,6 +26,7 @@ public class FormatoARepositoryImpl implements IFormatoARepository{
     private void inicializarFormatos() {
         FormatoPPEntity formato1 = new FormatoPPEntity();
         formato1.setId("1");
+        formato1.setTipo("PP");
         formato1.setTitulo("Formato 1");
         formato1.setDescripcion("Descripción del Formato 1");
         formato1.setObjetivoGeneral("Objetivo General 1");
@@ -37,6 +38,7 @@ public class FormatoARepositoryImpl implements IFormatoARepository{
 
         FormatoTIEntity formato2 = new FormatoTIEntity();
         formato2.setId("2");
+        formato2.setTipo("TI");
         formato2.setTitulo("Formato 2");
         formato2.setDescripcion("Descripción del Formato 2");
         formato2.setObjetivoGeneral("Objetivo General 2");
@@ -47,13 +49,14 @@ public class FormatoARepositoryImpl implements IFormatoARepository{
 
         FormatoTIEntity formato3 = new FormatoTIEntity();
         formato3.setId("3");
+        formato3.setTipo("TI");
         formato3.setTitulo("Formato 3");
         formato3.setDescripcion("Descripción del Formato 3");
         formato3.setObjetivoGeneral("Objetivo General 3");
         formato3.setObjetivosEspecificos(Arrays.asList("Objetivo Específico 3.1", "Objetivo Específico 3.2"));
         formato3.setFechaCreacion(LocalDateTime.now());
         formato3.setEstado(EstadoEnumEntity.RECHAZADO);
-        formato2.setEstudiantes(Arrays.asList("Estudiante 3.1", "Estudiante 3.2"));
+        formato3.setEstudiantes(Arrays.asList("Estudiante 3.1", "Estudiante 3.2"));
 
         mapaFormatos.put(formato1.getId(), formato1);
         mapaFormatos.put(formato2.getId(), formato2);
@@ -64,7 +67,10 @@ public class FormatoARepositoryImpl implements IFormatoARepository{
 
     @Override
     public Optional<FormatoEntity> crearFormato(FormatoEntity formato) {
-        mapaFormatos.put(formato.getId(), formato);
+        String id = ""+(mapaFormatos.size()+1);
+        formato.setId(id);
+        mapaFormatos.put(id, formato);
+        System.out.println("Formato creado: "+formato);
         return Optional.of(formato);
     }
 

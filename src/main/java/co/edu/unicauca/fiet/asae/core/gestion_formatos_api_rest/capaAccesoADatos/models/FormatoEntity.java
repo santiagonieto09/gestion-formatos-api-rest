@@ -6,13 +6,16 @@ package co.edu.unicauca.fiet.asae.core.gestion_formatos_api_rest.capaAccesoADato
 
 import co.edu.unicauca.fiet.asae.core.gestion_formatos_api_rest.DTO.EstadoEnum;
 import lombok.Data;
+import lombok.ToString;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
 @Data // TODO: Eliminar - Anotacion temporal
+@ToString
 public class FormatoEntity {
     String id;
+    String tipo; //PP, TI
     String titulo;
     String descripcion;
     String objetivoGeneral;

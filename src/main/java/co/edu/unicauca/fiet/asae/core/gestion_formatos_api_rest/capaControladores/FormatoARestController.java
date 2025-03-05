@@ -1,6 +1,7 @@
 package co.edu.unicauca.fiet.asae.core.gestion_formatos_api_rest.capaControladores;
 
 import co.edu.unicauca.fiet.asae.core.gestion_formatos_api_rest.DTO.request.FormatoDTOPeticion;
+import co.edu.unicauca.fiet.asae.core.gestion_formatos_api_rest.DTO.request.FormatoPPDTOPeticion;
 import co.edu.unicauca.fiet.asae.core.gestion_formatos_api_rest.DTO.response.FormatoDTORespuesta;
 import co.edu.unicauca.fiet.asae.core.gestion_formatos_api_rest.DTO.EstadoEnum;
 import co.edu.unicauca.fiet.asae.core.gestion_formatos_api_rest.fachadaService.services.IFormatoAServices;
@@ -21,6 +22,7 @@ public class FormatoARestController {
 
     @PostMapping
     public ResponseEntity<FormatoDTORespuesta> crearFormato(@RequestBody FormatoDTOPeticion formato) {
+        System.out.println(formato instanceof FormatoPPDTOPeticion);
         return ResponseEntity.ok(formatoAServices.crearFormato(formato));
     }
 

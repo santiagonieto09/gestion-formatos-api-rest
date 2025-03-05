@@ -13,6 +13,7 @@ import java.util.List;
 @Data
 public class FormatoDTORespuesta {
     String id;
+    String tipo; //PP, TI
     String titulo;
     String descripcion;
     String objetivoGeneral;
