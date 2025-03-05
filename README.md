@@ -14,3 +14,10 @@ API REST para la gestión de propuestas de trabajos de grado (modalidades PP-A y
 - **Lenguaje**: Java 17
 - **Framework**: Spring Boot 3.x
 - **Gestión de dependencias**: Maven
+
+...
+## Autores  
+- **Jerferson Castaño** - <jcastanoossa@unicauca.edu.co>  
+- **Santiago Nieto** - <santiagonietu@unicauca.edu.co>  
+
+*FIET - Universidad del Cauca | 2025*
