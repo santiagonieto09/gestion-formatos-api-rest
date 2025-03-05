@@ -1,6 +1,6 @@
-package co.edu.unicauca.fiet.asae.core.gestion_formatos_api_rest.DTO;
+package co.edu.unicauca.fiet.asae.core.gestion_formatos_api_rest.capaAccesoADatos.models;
 
-public enum EstadoEnum {
+public enum EstadoEnumEntity {
     EN_FORMULACION("En Formulación"),
     EN_EVALUACION("En Evaluación"),
     POR_CORREGIR("Por Corregir"),
@@ -9,7 +9,7 @@ public enum EstadoEnum {
 
     private final String displayName;
 
-    EstadoEnum(String displayName) {
+    EstadoEnumEntity(String displayName) {
         this.displayName = displayName;
     }
 

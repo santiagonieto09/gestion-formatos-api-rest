@@ -4,6 +4,13 @@
  */
 package co.edu.unicauca.fiet.asae.core.gestion_formatos_api_rest.capaAccesoADatos.models;
 
+import lombok.Getter;
+import lombok.Setter;
+
+import java.util.List;
+
+@Setter
+@Getter
 public class FormatoTIEntity extends FormatoEntity{
-    
+    List<String> estudiantes;
 }
