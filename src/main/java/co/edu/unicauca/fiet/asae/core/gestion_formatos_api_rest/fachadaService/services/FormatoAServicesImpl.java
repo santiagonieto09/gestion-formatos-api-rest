@@ -12,6 +12,7 @@ import co.edu.unicauca.fiet.asae.core.gestion_formatos_api_rest.DTO.response.For
 import co.edu.unicauca.fiet.asae.core.gestion_formatos_api_rest.capaAccesoADatos.models.EstadoEnumEntity;
 import co.edu.unicauca.fiet.asae.core.gestion_formatos_api_rest.capaAccesoADatos.models.FormatoEntity;
 import co.edu.unicauca.fiet.asae.core.gestion_formatos_api_rest.capaAccesoADatos.repository.IFormatoARepository;
+import co.edu.unicauca.fiet.asae.core.gestion_formatos_api_rest.fachadaService.estados.*;
 import co.edu.unicauca.fiet.asae.core.gestion_formatos_api_rest.fachadaService.exceptions.FormatoException;
 import co.edu.unicauca.fiet.asae.core.gestion_formatos_api_rest.fachadaService.mapper.FormatoMapper;
 import lombok.AllArgsConstructor;
@@ -68,7 +69,40 @@ public class FormatoAServicesImpl implements IFormatoAServices{
     }
 
     @Override
-    public String cambiarEstado(String id, EstadoEnum estado) {
-        return estado.toString();
+    public String cambiarEstado(String id, EstadoEnum estadoSolicitado) {
+        FormatoEntity formatoEntity = servicioAccesoBD.consultarFormato(id)
+                .orElseThrow(() -> new FormatoException("Formato no encontrado."));
+        
+        FormatoA formatoA = new FormatoA();
+        formatoA.setEstado(obtenerEstadoActual(formatoEntity.getEstado()));
+        
+        Resultado resultado = procesarCambioEstado(formatoA, estadoSolicitado);
+        
+        if (resultado.cambioPermitido()) {
+            formatoEntity.setEstado(EstadoEnumEntity.valueOf(estadoSolicitado.name()));
+            servicioAccesoBD.modificarFormato(id, formatoEntity);
+        }
+        
+        return resultado.mensaje();
+    }
+
+    private EstadoInt obtenerEstadoActual(EstadoEnumEntity estadoActual) {
+        return switch (estadoActual) {
+            case EN_FORMULACION -> new EstadoFormulado();
+            case EN_EVALUACION -> new EstadoEnEvaluacion();
+            case POR_CORREGIR -> new EstadoFormuladoConObservaciones();
+            case APROBADO -> new EstadoAprobado();
+            case RECHAZADO -> new EstadoNoAprobado();
+        };
+    }
+
+    private Resultado procesarCambioEstado(FormatoA formatoA, EstadoEnum estadoSolicitado) {
+        return switch (estadoSolicitado) {
+            case EN_EVALUACION -> formatoA.enviarParaEvaluacion();
+            case APROBADO -> formatoA.aprobar();
+            case POR_CORREGIR -> formatoA.fijarObservaciones();
+            case RECHAZADO -> formatoA.noAprobar();
+            case EN_FORMULACION -> throw new FormatoException("No se puede cambiar directamente al estado EN FORMULACION");
+        };
     }
 }
