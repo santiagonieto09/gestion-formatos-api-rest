@@ -32,8 +32,11 @@ public class FormatoARestController {
     }
 
     @GetMapping
-    public ResponseEntity<List<FormatoDTORespuesta>> listarFormatos() {
-        return ResponseEntity.ok(formatoAServices.listarFormatos());
+    public ResponseEntity<List<FormatoDTORespuesta>> listarFormatos(
+        @RequestParam(required = false) String tipo,
+        @RequestParam(required = false) String estado
+    ) {
+        return ResponseEntity.ok(formatoAServices.listarFormatos(tipo, estado));
     }
 
     @PutMapping("/{id}")

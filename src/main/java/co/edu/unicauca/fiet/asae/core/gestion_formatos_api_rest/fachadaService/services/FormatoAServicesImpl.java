@@ -23,6 +23,8 @@ import java.time.LocalDateTime;
 import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 @Service
 @AllArgsConstructor
@@ -57,9 +59,28 @@ public class FormatoAServicesImpl implements IFormatoAServices{
     }
 
     @Override
-    public List<FormatoDTORespuesta> listarFormatos() {
-        Collection<FormatoEntity> formatos = servicioAccesoBD.listarFormatos().orElseThrow(() -> new FormatoException("No hay formatos creados."));
-        return FormatoMapper.INSTANCE.toDTOList(formatos);
+    public List<FormatoDTORespuesta> listarFormatos(String tipo, String estado) {
+        Collection<FormatoEntity> formatos = servicioAccesoBD.listarFormatos()
+                .orElseThrow(() -> new FormatoException("No hay formatos creados."));
+        
+        Stream<FormatoEntity> stream = formatos.stream();
+        
+        if (tipo != null && !tipo.isEmpty()) {
+            stream = stream.filter(f -> f.getTipo().equals(tipo));
+        }
+        
+        if (estado != null && !estado.isEmpty()) {
+            try {
+                EstadoEnumEntity estadoEnum = EstadoEnumEntity.valueOf(estado);
+                stream = stream.filter(f -> f.getEstado() == estadoEnum);
+            } catch (IllegalArgumentException e) {
+                throw new FormatoException("Estado no válido: " + estado);
+            }
+        }
+        
+        return stream
+            .map(FormatoMapper.INSTANCE::toDTO)
+            .collect(Collectors.toList());
     }
 
     @Override

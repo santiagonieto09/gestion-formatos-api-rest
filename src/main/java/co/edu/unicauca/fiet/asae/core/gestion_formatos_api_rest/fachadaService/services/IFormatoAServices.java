@@ -12,7 +12,7 @@ import java.util.List;
 public interface IFormatoAServices {
     FormatoDTORespuesta crearFormato(FormatoDTOPeticion formato);
     FormatoDTORespuesta consultarFormato(String id);
-    List<FormatoDTORespuesta> listarFormatos();
+    List<FormatoDTORespuesta> listarFormatos(String tipo, String estado);
     FormatoDTORespuesta modificarFormato(String id, FormatoDTOPeticion formato);
     String cambiarEstado(String id, EstadoEnum estado);
 }
