@@ -4,12 +4,13 @@
  */
 package co.edu.unicauca.fiet.asae.core.gestion_formatos_api_rest.capaAccesoADatos.models;
 
-import co.edu.unicauca.fiet.asae.core.gestion_formatos_api_rest.DTO.EstadoEnum;
 import lombok.Data;
 import lombok.ToString;
 
 import java.time.LocalDateTime;
 import java.util.List;
+
+import co.edu.unicauca.fiet.asae.core.gestion_formatos_api_rest.fachadaService.DTO.EstadoEnum;
 
 @Data // TODO: Eliminar - Anotacion temporal
 @ToString

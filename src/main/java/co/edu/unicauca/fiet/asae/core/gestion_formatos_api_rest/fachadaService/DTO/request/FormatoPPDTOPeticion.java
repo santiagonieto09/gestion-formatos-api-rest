@@ -1,4 +1,4 @@
-package co.edu.unicauca.fiet.asae.core.gestion_formatos_api_rest.DTO.request;
+package co.edu.unicauca.fiet.asae.core.gestion_formatos_api_rest.fachadaService.DTO.request;
 
 import lombok.Data;
 import lombok.Getter;

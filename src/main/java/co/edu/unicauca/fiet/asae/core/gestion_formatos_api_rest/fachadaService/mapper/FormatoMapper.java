@@ -1,14 +1,15 @@
 package co.edu.unicauca.fiet.asae.core.gestion_formatos_api_rest.fachadaService.mapper;
 
-import co.edu.unicauca.fiet.asae.core.gestion_formatos_api_rest.DTO.request.FormatoDTOPeticion;
-import co.edu.unicauca.fiet.asae.core.gestion_formatos_api_rest.DTO.request.FormatoPPDTOPeticion;
-import co.edu.unicauca.fiet.asae.core.gestion_formatos_api_rest.DTO.request.FormatoTIDTOPeticion;
-import co.edu.unicauca.fiet.asae.core.gestion_formatos_api_rest.DTO.response.FormatoDTORespuesta;
-import co.edu.unicauca.fiet.asae.core.gestion_formatos_api_rest.DTO.response.FormatoPPDTORespuesta;
-import co.edu.unicauca.fiet.asae.core.gestion_formatos_api_rest.DTO.response.FormatoTIDTORespuesta;
 import co.edu.unicauca.fiet.asae.core.gestion_formatos_api_rest.capaAccesoADatos.models.FormatoEntity;
 import co.edu.unicauca.fiet.asae.core.gestion_formatos_api_rest.capaAccesoADatos.models.FormatoPPEntity;
 import co.edu.unicauca.fiet.asae.core.gestion_formatos_api_rest.capaAccesoADatos.models.FormatoTIEntity;
+import co.edu.unicauca.fiet.asae.core.gestion_formatos_api_rest.fachadaService.DTO.request.FormatoDTOPeticion;
+import co.edu.unicauca.fiet.asae.core.gestion_formatos_api_rest.fachadaService.DTO.request.FormatoPPDTOPeticion;
+import co.edu.unicauca.fiet.asae.core.gestion_formatos_api_rest.fachadaService.DTO.request.FormatoTIDTOPeticion;
+import co.edu.unicauca.fiet.asae.core.gestion_formatos_api_rest.fachadaService.DTO.response.FormatoDTORespuesta;
+import co.edu.unicauca.fiet.asae.core.gestion_formatos_api_rest.fachadaService.DTO.response.FormatoPPDTORespuesta;
+import co.edu.unicauca.fiet.asae.core.gestion_formatos_api_rest.fachadaService.DTO.response.FormatoTIDTORespuesta;
+
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Named;

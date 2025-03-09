@@ -4,14 +4,14 @@
  */
 package co.edu.unicauca.fiet.asae.core.gestion_formatos_api_rest.fachadaService.services;
 
-import co.edu.unicauca.fiet.asae.core.gestion_formatos_api_rest.DTO.EstadoEnum;
-import co.edu.unicauca.fiet.asae.core.gestion_formatos_api_rest.DTO.request.FormatoDTOPeticion;
-import co.edu.unicauca.fiet.asae.core.gestion_formatos_api_rest.DTO.request.FormatoPPDTOPeticion;
-import co.edu.unicauca.fiet.asae.core.gestion_formatos_api_rest.DTO.request.FormatoTIDTOPeticion;
-import co.edu.unicauca.fiet.asae.core.gestion_formatos_api_rest.DTO.response.FormatoDTORespuesta;
 import co.edu.unicauca.fiet.asae.core.gestion_formatos_api_rest.capaAccesoADatos.models.EstadoEnumEntity;
 import co.edu.unicauca.fiet.asae.core.gestion_formatos_api_rest.capaAccesoADatos.models.FormatoEntity;
 import co.edu.unicauca.fiet.asae.core.gestion_formatos_api_rest.capaAccesoADatos.repository.IFormatoARepository;
+import co.edu.unicauca.fiet.asae.core.gestion_formatos_api_rest.fachadaService.DTO.EstadoEnum;
+import co.edu.unicauca.fiet.asae.core.gestion_formatos_api_rest.fachadaService.DTO.request.FormatoDTOPeticion;
+import co.edu.unicauca.fiet.asae.core.gestion_formatos_api_rest.fachadaService.DTO.request.FormatoPPDTOPeticion;
+import co.edu.unicauca.fiet.asae.core.gestion_formatos_api_rest.fachadaService.DTO.request.FormatoTIDTOPeticion;
+import co.edu.unicauca.fiet.asae.core.gestion_formatos_api_rest.fachadaService.DTO.response.FormatoDTORespuesta;
 import co.edu.unicauca.fiet.asae.core.gestion_formatos_api_rest.fachadaService.estados.*;
 import co.edu.unicauca.fiet.asae.core.gestion_formatos_api_rest.fachadaService.exceptions.FormatoException;
 import co.edu.unicauca.fiet.asae.core.gestion_formatos_api_rest.fachadaService.mapper.FormatoMapper;

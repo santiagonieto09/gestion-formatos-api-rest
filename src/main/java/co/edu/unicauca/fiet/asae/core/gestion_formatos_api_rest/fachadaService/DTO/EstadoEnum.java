@@ -1,4 +1,4 @@
-package co.edu.unicauca.fiet.asae.core.gestion_formatos_api_rest.DTO;
+package co.edu.unicauca.fiet.asae.core.gestion_formatos_api_rest.fachadaService.DTO;
 
 public enum EstadoEnum {
     EN_FORMULACION("En Formulación"),
