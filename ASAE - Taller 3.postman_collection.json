@@ -1,0 +1,164 @@
+{
+	"info": {
+		"_postman_id": "a84d37b9-eec5-4820-b781-bd1ac5361bd4",
+		"name": "ASAE - Taller 3",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30873478"
+	},
+	"item": [
+		{
+			"name": "Obtener formato",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/formatos/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"formatos",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Formatos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/formatos",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"formatos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Formatos Copy",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"EstadoEnum\":\"APROBADO\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/formatos/1/EN_EVALUACION",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"formatos",
+						"1",
+						"EN_EVALUACION"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear Formato PP",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"tipo\": \"PP\",\r\n  \"titulo\": \"Formato Bonito\",\r\n  \"descripcion\": \"Descripción del Formato \",\r\n  \"objetivoGeneral\": \"Objetivo General \",\r\n  \"objetivosEspecificos\": [\r\n    \"Objetivo Específico 1.1\",\r\n    \"Objetivo Específico 1.2\"\r\n  ],\r\n  \"asesor\": \"Asesor 1\",\r\n  \"carta\": \"Carta 1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/formatos",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"formatos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar Formato PP",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"titulo\": \"Formato FEO\",\r\n  \"descripcion\": \"Descripción del Formato \",\r\n  \"objetivoGeneral\": \"Objetivo General \",\r\n  \"objetivosEspecificos\": [\r\n    \"Objetivo Específico 1.1\",\r\n    \"Objetivo Específico 1.2\"\r\n  ],\r\n  \"tipo\": \"PP\",\r\n  \"asesor\": \"Asesor 1\",\r\n  \"carta\": \"Carta 1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/formatos/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"formatos",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear Formato TI",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"titulo\": \"Formato Bonito\",\r\n  \"descripcion\": \"Descripción del Formato \",\r\n  \"objetivoGeneral\": \"Objetivo General \",\r\n  \"objetivosEspecificos\": [\r\n    \"Objetivo Específico 1.1\",\r\n    \"Objetivo Específico 1.2\"\r\n  ],\r\n  \"tipo\": \"TI\",\r\n  \"estudiantes\": [\r\n    \"Pepe\", \"Pablo\"\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/formatos",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"formatos"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
