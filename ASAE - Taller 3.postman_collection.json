@@ -1,0 +1,222 @@
+{
+	"info": {
+		"_postman_id": "2fd74d11-77ec-494d-8653-24f1b826e37a",
+		"name": "ASAE - Taller 3",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30869581"
+	},
+	"item": [
+		{
+			"name": "Crear Formato PP",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"tipo\": \"PP\",\r\n  \"titulo\": \"Formato Bonito\",\r\n  \"descripcion\": \"Descripción del Formato \",\r\n  \"objetivoGeneral\": \"Objetivo General \",\r\n  \"objetivosEspecificos\": [\r\n    \"Objetivo Específico 1.1\",\r\n    \"Objetivo Específico 1.2\"\r\n  ],\r\n  \"asesor\": \"Asesor 1\",\r\n  \"carta\": \"Carta 1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/api/formatos",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"formatos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear Formato TI",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"titulo\": \"Formato Bonito\",\r\n  \"descripcion\": \"Descripción del Formato \",\r\n  \"objetivoGeneral\": \"Objetivo General \",\r\n  \"objetivosEspecificos\": [\r\n    \"Objetivo Específico 1.1\",\r\n    \"Objetivo Específico 1.2\"\r\n  ],\r\n  \"tipo\": \"TI\",\r\n  \"estudiantes\": [\r\n    \"Pepe\", \"Pablo\"\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/api/formatos",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"formatos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener formato",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/api/formatos/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"formatos",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Formatos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/api/formatos",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"formatos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Formatos Filtrados",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/api/formatos?tipo=TI&estado=APROBADO",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"formatos"
+					],
+					"query": [
+						{
+							"key": "tipo",
+							"value": "TI"
+						},
+						{
+							"key": "estado",
+							"value": "APROBADO"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Formatos Fecha",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/api/formatos?fechaInicio=2025-01-01&fechaFin=2025-03-11",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"formatos"
+					],
+					"query": [
+						{
+							"key": "fechaInicio",
+							"value": "2025-01-01"
+						},
+						{
+							"key": "fechaFin",
+							"value": "2025-03-11"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar Formato PP",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"titulo\": \"Formato FEO\",\r\n  \"descripcion\": \"Descripción del Formato \",\r\n  \"objetivoGeneral\": \"Objetivo General \",\r\n  \"objetivosEspecificos\": [\r\n    \"Objetivo Específico 1.1\",\r\n    \"Objetivo Específico 1.2\"\r\n  ],\r\n  \"tipo\": \"PP\",\r\n  \"asesor\": \"Asesor 1\",\r\n  \"carta\": \"Carta 1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/api/formatos/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"formatos",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Modificar Estado",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/api/formatos/1/POR_CORREGIR",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"formatos",
+						"1",
+						"POR_CORREGIR"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
