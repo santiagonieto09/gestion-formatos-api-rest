@@ -6,7 +6,7 @@ package co.edu.unicauca.fiet.asae.core.gestion_formatos_api_rest.fachadaService.
 
 import lombok.Data;
 
-import java.time.LocalDateTime;
+import java.util.Date;    
 import java.util.List;
 
 import co.edu.unicauca.fiet.asae.core.gestion_formatos_api_rest.fachadaService.DTO.EstadoEnum;
@@ -19,6 +19,6 @@ public class FormatoDTORespuesta {
     String descripcion;
     String objetivoGeneral;
     List<String> objetivosEspecificos;
-    LocalDateTime fechaCreacion;
+    Date fechaCreacion;
     EstadoEnum estado;
 }

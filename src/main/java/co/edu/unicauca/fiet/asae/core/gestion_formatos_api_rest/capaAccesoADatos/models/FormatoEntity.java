@@ -7,7 +7,7 @@ package co.edu.unicauca.fiet.asae.core.gestion_formatos_api_rest.capaAccesoADato
 import lombok.Data;
 import lombok.ToString;
 
-import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.List;
 
 import co.edu.unicauca.fiet.asae.core.gestion_formatos_api_rest.fachadaService.DTO.EstadoEnum;
@@ -21,6 +21,6 @@ public class FormatoEntity {
     String descripcion;
     String objetivoGeneral;
     List<String> objetivosEspecificos;
-    LocalDateTime fechaCreacion;
+    Date fechaCreacion;
     EstadoEnumEntity estado;
 }

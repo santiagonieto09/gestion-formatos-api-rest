@@ -7,9 +7,10 @@ import co.edu.unicauca.fiet.asae.core.gestion_formatos_api_rest.fachadaService.D
 import co.edu.unicauca.fiet.asae.core.gestion_formatos_api_rest.fachadaService.services.IFormatoAServices;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
+import java.util.Date;
 import java.util.List;
 
 @RestController
@@ -34,9 +35,11 @@ public class FormatoARestController {
     @GetMapping
     public ResponseEntity<List<FormatoDTORespuesta>> listarFormatos(
         @RequestParam(required = false) String tipo,
-        @RequestParam(required = false) String estado
+        @RequestParam(required = false) String estado,
+        @RequestParam(required = false) @DateTimeFormat(pattern = "yyyy-MM-dd") Date fechaInicio,
+        @RequestParam(required = false) @DateTimeFormat(pattern = "yyyy-MM-dd") Date fechaFin
     ) {
-        return ResponseEntity.ok(formatoAServices.listarFormatos(tipo, estado));
+        return ResponseEntity.ok(formatoAServices.listarFormatos(tipo, estado, fechaInicio, fechaFin));
     }
 
     @PutMapping("/{id}")

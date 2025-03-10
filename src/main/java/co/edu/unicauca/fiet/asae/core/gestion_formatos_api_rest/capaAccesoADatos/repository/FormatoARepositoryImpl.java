@@ -11,7 +11,7 @@ import co.edu.unicauca.fiet.asae.core.gestion_formatos_api_rest.capaAccesoADatos
 import co.edu.unicauca.fiet.asae.core.gestion_formatos_api_rest.capaAccesoADatos.models.FormatoTIEntity;
 import org.springframework.stereotype.Repository;
 
-import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.*;
 
 @Repository
@@ -31,7 +31,7 @@ public class FormatoARepositoryImpl implements IFormatoARepository{
         formato1.setDescripcion("Descripción del Formato 1");
         formato1.setObjetivoGeneral("Objetivo General 1");
         formato1.setObjetivosEspecificos(Arrays.asList("Objetivo Específico 1.1", "Objetivo Específico 1.2"));
-        formato1.setFechaCreacion(LocalDateTime.now());
+        formato1.setFechaCreacion(new Date());
         formato1.setEstado(EstadoEnumEntity.EN_EVALUACION);
         formato1.setAsesor("Asesor 1");
         formato1.setCarta("Carta 1");
@@ -43,7 +43,7 @@ public class FormatoARepositoryImpl implements IFormatoARepository{
         formato2.setDescripcion("Descripción del Formato 2");
         formato2.setObjetivoGeneral("Objetivo General 2");
         formato2.setObjetivosEspecificos(Arrays.asList("Objetivo Específico 2.1", "Objetivo Específico 2.2"));
-        formato2.setFechaCreacion(LocalDateTime.now());
+        formato2.setFechaCreacion(new Date());
         formato2.setEstado(EstadoEnumEntity.APROBADO);
         formato2.setEstudiantes(Arrays.asList("Estudiante 2.1", "Estudiante 2.2"));
 
@@ -54,7 +54,7 @@ public class FormatoARepositoryImpl implements IFormatoARepository{
         formato3.setDescripcion("Descripción del Formato 3");
         formato3.setObjetivoGeneral("Objetivo General 3");
         formato3.setObjetivosEspecificos(Arrays.asList("Objetivo Específico 3.1", "Objetivo Específico 3.2"));
-        formato3.setFechaCreacion(LocalDateTime.now());
+        formato3.setFechaCreacion(new Date());
         formato3.setEstado(EstadoEnumEntity.RECHAZADO);
         formato3.setEstudiantes(Arrays.asList("Estudiante 3.1", "Estudiante 3.2"));
 

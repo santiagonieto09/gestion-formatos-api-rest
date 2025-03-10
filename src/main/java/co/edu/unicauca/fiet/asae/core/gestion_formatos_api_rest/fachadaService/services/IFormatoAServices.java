@@ -6,13 +6,14 @@ import co.edu.unicauca.fiet.asae.core.gestion_formatos_api_rest.fachadaService.D
 import co.edu.unicauca.fiet.asae.core.gestion_formatos_api_rest.fachadaService.DTO.request.FormatoDTOPeticion;
 import co.edu.unicauca.fiet.asae.core.gestion_formatos_api_rest.fachadaService.DTO.response.FormatoDTORespuesta;
 
+import java.util.Date;
 import java.util.List;
 
 @Service
 public interface IFormatoAServices {
     FormatoDTORespuesta crearFormato(FormatoDTOPeticion formato);
     FormatoDTORespuesta consultarFormato(String id);
-    List<FormatoDTORespuesta> listarFormatos(String tipo, String estado);
+    List<FormatoDTORespuesta> listarFormatos(String tipo, String estado, Date fechaInicio, Date fechaFin);
     FormatoDTORespuesta modificarFormato(String id, FormatoDTOPeticion formato);
     String cambiarEstado(String id, EstadoEnum estado);
 }

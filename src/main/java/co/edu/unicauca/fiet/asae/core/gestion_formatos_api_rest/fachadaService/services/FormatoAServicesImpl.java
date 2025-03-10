@@ -18,11 +18,9 @@ import co.edu.unicauca.fiet.asae.core.gestion_formatos_api_rest.fachadaService.m
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.time.LocalDateTime;
 import java.util.Collection;
+import java.util.Date;
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -42,7 +40,7 @@ public class FormatoAServicesImpl implements IFormatoAServices{
     private FormatoEntity initializeFormatoEntity(FormatoDTOPeticion formato) {
         FormatoEntity formatoEntity = FormatoMapper.INSTANCE.toEntity(formato);
         formatoEntity.setEstado(EstadoEnumEntity.EN_FORMULACION);
-        formatoEntity.setFechaCreacion(LocalDateTime.now());
+        formatoEntity.setFechaCreacion(new Date());
 
         if(formato instanceof FormatoPPDTOPeticion){
             formatoEntity.setTipo("PP");}
@@ -59,7 +57,7 @@ public class FormatoAServicesImpl implements IFormatoAServices{
     }
 
     @Override
-    public List<FormatoDTORespuesta> listarFormatos(String tipo, String estado) {
+    public List<FormatoDTORespuesta> listarFormatos(String tipo, String estado, Date fechaInicio, Date fechaFin) {
         Collection<FormatoEntity> formatos = servicioAccesoBD.listarFormatos()
                 .orElseThrow(() -> new FormatoException("No hay formatos creados."));
         
@@ -76,6 +74,14 @@ public class FormatoAServicesImpl implements IFormatoAServices{
             } catch (IllegalArgumentException e) {
                 throw new FormatoException("Estado no válido: " + estado);
             }
+        }
+        
+        if (fechaInicio != null) {
+            stream = stream.filter(f -> !f.getFechaCreacion().before(fechaInicio));
+        }
+        
+        if (fechaFin != null) {
+            stream = stream.filter(f -> !f.getFechaCreacion().after(fechaFin));
         }
         
         return stream
